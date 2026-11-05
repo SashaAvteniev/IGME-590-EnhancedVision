@@ -558,7 +558,7 @@ MonoBehaviour:
       - m_Target: {fileID: 835247321}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: OnLook
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -570,7 +570,19 @@ MonoBehaviour:
     m_ActionId: 2e52413e-7e4b-4925-b3ee-bfefc0edb41c
     m_ActionName: 'Basic Look/Scan/Look[/Mouse/position]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 835247321}
+        m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
+        m_MethodName: OnScan
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 21fcc179-8e89-42e0-912d-0ae77681ec9f
     m_ActionName: 'Basic Look/Scan/Scan[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -771,7 +783,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c1cdf70dc11f04c992c9320b40cd74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerActions
-  camera: {fileID: 330585543}
+  mainCamera: {fileID: 330585543}
+  cameraSpeedX: 5
+  cameraSpeedY: 5
+  radius: 1
 --- !u!136 &835247322
 CapsuleCollider:
   m_ObjectHideFlags: 0

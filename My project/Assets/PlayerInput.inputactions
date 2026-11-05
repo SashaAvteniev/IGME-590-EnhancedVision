@@ -39,17 +39,6 @@
                 },
                 {
                     "name": "",
-                    "id": "fb004f1c-4c16-4243-a954-a9dce2c4fb2c",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f56825df-c229-4ea9-8d11-b065e8435986",
                     "path": "<Keyboard>/q",
                     "interactions": "",

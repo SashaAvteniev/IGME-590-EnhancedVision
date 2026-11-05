@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class Scan : MonoBehaviour
+public static class PlayerScan 
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static void Scan(Vector3 currentPosition, float scanRadius)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Collider[] colliderArray = Physics.OverlapSphere(currentPosition, scanRadius);
+        if(colliderArray.Length == 0)
+        {
+            Debug.LogError("Scan Missed");
+        }
+        foreach(Collider collider in colliderArray)
+        {
+            if (collider.gameObject.activeSelf)
+            {
+                Debug.Log("WOW");
+            }
+        }
     }
 }

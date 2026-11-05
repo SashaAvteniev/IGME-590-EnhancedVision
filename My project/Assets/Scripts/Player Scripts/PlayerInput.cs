@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,9 +8,16 @@ using UnityEngine.InputSystem;
 //This should be on your actual character/player model
 public class PlayerActions : MonoBehaviour
 {
+    [Header("Camera Settings")]
     //Reference to the main first person camera
-    [SerializeField] private GameObject camera;
+    [Tooltip("This is the main camera for your first person controller")]
+    [SerializeField] private GameObject mainCamera;
 
+    [SerializeField] private float cameraSpeedX;
+    [SerializeField] private float cameraSpeedY;
+
+    [Header("Scan Settings")]
+    [SerializeField] private float radius;
     void Awake()
     {
 
@@ -28,17 +36,19 @@ public class PlayerActions : MonoBehaviour
 
     }
 
-    public void OnLook(InputAction context)
+    public void OnLook(InputAction.CallbackContext context)
     {
-        Debug.Log("hit");
         float mouseX = context.ReadValue<Vector2>().x;
         float mouseY = context.ReadValue<Vector2>().y;
 
-        PlayerLook.Look(camera, this.gameObject, mouseX, mouseY);
+        PlayerLook.Look(mainCamera, this.gameObject, mouseX, mouseY,cameraSpeedX,cameraSpeedY);
     }
 
-    public void OnScan(InputAction context)
+    public void OnScan(InputAction.CallbackContext context)
     {
-
+        if (context.started)
+        {
+            PlayerScan.Scan(transform.position, radius);
+        }
     }
 }
